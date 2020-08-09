@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      routes:
+        - id: test1
+          uri: http://127.0.0.1:8080
+          predicates:
+            - Path=/**
+server:
+  port: 8081
