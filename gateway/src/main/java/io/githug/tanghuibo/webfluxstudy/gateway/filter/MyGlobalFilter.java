@@ -57,8 +57,6 @@ public class MyGlobalFilter implements GlobalFilter {
              ServerWebExchange exchange2 = exchange1.mutate().request(exchange1.getRequest().mutate().header("sign", mySign).build()).build();
              return chain.filter(exchange2);
          })).then();
-
-
     }
 
     private Mono<Void> handleGet(ServerWebExchange exchange, GatewayFilterChain chain) {
